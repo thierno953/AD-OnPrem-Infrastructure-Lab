@@ -2,6 +2,13 @@
 
 Enterprise on-prem infrastructure | Windows Server 2022 | Simulated environment
 
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+![Platform](https://img.shields.io/badge/Windows_Server-2022-blue)
+![ActiveDirectory](https://img.shields.io/badge/Active_Directory-Enterprise-blue)
+![PowerShell](https://img.shields.io/badge/PowerShell-Automation-important)
+
+> Enterprise Active Directory lab demonstrating identity management, network services, security hardening, patch management, and infrastructure automation using Windows Server 2022.
+
 ---
 
 ## Project Overview
@@ -19,6 +26,21 @@ Production-like enterprise infrastructure focused on centralized administration,
 - OS deployment & remote access
 - Security hardening
 - Patch management
+
+---
+
+## Lab Environment
+
+| Component          | Configuration           |
+| ------------------ | ----------------------- |
+| Domain             | diarabaka.com           |
+| Domain Controllers | 2 x Windows Server 2022 |
+| Clients            | Windows 10 / Windows 11 |
+| Firewall           | pfSense                 |
+| PKI                | ADCS                    |
+| Deployment         | WDS                     |
+| Remote Access      | RDS                     |
+| Update Management  | WSUS                    |
 
 ---
 
@@ -188,7 +210,69 @@ Write-Host "User provisioning completed."
 
 ---
 
-## Key Skills
+## Technologies & Skills Demonstrated
 
 `AD DS` `DNS/DHCP` `GPO` `GPO Refresh` `WEF` `DFS/DFS-R` `BitLocker` `Kerberos` `LAPS` `WSUS`
 `PowerShell` `pfSense` `RDS` `WDS`
+
+---
+
+## Challenges & Solutions
+
+### DFS Replication Troubleshooting
+
+**Problem**
+
+DFS replication was not synchronizing correctly between replicated folders.
+
+**Solution**
+
+Verified DFS-R service status, Active Directory replication health, and replication topology configuration.
+
+**Result**
+
+Successful synchronization across all DFS members.
+
+### DHCP Failover Validation
+
+**Problem**
+
+Ensure uninterrupted IP address assignment during DHCP server failure.
+
+**Solution**
+
+Configured DHCP Failover and tested service continuity during simulated outage.
+
+**Result**
+
+Clients continued receiving valid leases without interruption.
+
+---
+
+## Lessons Learned
+
+- Active Directory infrastructure design
+- Organizational Unit (OU) planning
+- DNS and DHCP administration
+- DFS Namespace and DFS Replication
+- Group Policy deployment and troubleshooting
+- Windows Server security hardening
+- Active Directory Certificate Services (ADCS)
+- WSUS administration
+- PowerShell automation
+
+---
+
+## Future Improvements
+
+- Microsoft Entra ID integration
+- Hybrid identity synchronization
+- Microsoft Intune management
+- Microsoft Sentinel monitoring
+- Automated compliance reporting
+
+---
+
+## Project Status
+
+✅ Completed
